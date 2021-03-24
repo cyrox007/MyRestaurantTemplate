@@ -1,0 +1,74 @@
+$color-l: #fff;
+$color-s: #ccc;
+$color-m: #999;
+$color-n: #444;
+$color-d: #000;
+
+$font-h: Arial, sans-serif;
+$font-p: 'Times New Roman';
+
+$font-sh: 32px;
+$font-sp: 14px;
+
+$py-n: 2rem 0;
+$px-n: 0 1.5rem;
+
+$brp-xs: 320px;
+$brp-sm: 480px;
+$brp-md: 768px;
+$brp-lg: 1200px;
+
+
+* {
+    padding: 0;
+    margin: 0;
+}
+header {
+    border: 1px solid yellow;
+}
+header {
+    padding: 1.5rem 0;
+    .wrap-h {
+        margin: 0 auto;
+        border: 1px solid yellow;
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        max-width: 1200px;
+        .main-btn {
+            text-align: center;
+            p {
+                width: 100%;
+                transition: .3s;
+                text-transform: uppercase;
+                a {
+                    text-decoration: none;
+                    color: $color-d;
+                    font-size: $font-sp;   
+                }
+                &:hover {
+                    background-color: $color-m;
+                }
+            }
+        }
+        .brand {
+            h1 {
+                text-align: center;
+                font-family: $font-h;
+                font-size: $font-sh;
+            }
+        }
+        .contact {
+            padding-right: 1rem;
+            display: flex;
+            justify-content: space-between;
+            p a {
+                text-decoration: none;
+                color: $color-d;
+                font-size: $font-sp;
+            }
+        }
+        .fa-bars {
+            font-size: 2.3rem;
+        }
+    }
+}

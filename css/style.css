@@ -1,0 +1,70 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  border: 1px solid yellow;
+}
+
+header {
+  padding: 1.5rem 0;
+}
+
+header .wrap-h {
+  margin: 0 auto;
+  border: 1px solid yellow;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr 1fr;
+      grid-template-columns: 1fr 3fr 1fr;
+  max-width: 1200px;
+}
+
+header .wrap-h .main-btn {
+  text-align: center;
+}
+
+header .wrap-h .main-btn p {
+  width: 100%;
+  -webkit-transition: .3s;
+  transition: .3s;
+  text-transform: uppercase;
+}
+
+header .wrap-h .main-btn p a {
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+}
+
+header .wrap-h .main-btn p:hover {
+  background-color: #999;
+}
+
+header .wrap-h .brand h1 {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 32px;
+}
+
+header .wrap-h .contact {
+  padding-right: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header .wrap-h .contact p a {
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+}
+
+header .wrap-h .fa-bars {
+  font-size: 2.3rem;
+}
+/*# sourceMappingURL=style.css.map */
