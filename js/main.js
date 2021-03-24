@@ -1,17 +1,31 @@
-window.onload = function () {
-    a = document.getElementById('a');
-    b = document.getElementById('b');
+// menu
+const menuBtn = document.querySelector('.nav-btn');
+const closeMenuBtn = document.querySelector('.btn-close')
+const menu = document.querySelector('.nav');
+
+const showMenu = function() {
+    menu.classList.add('show');
 }
 
-function showA() {
-    b.style.filter = 'alpha(opacity=80)';
-    b.style.opacity = 0.8;
-    b.style.display = 'block';
-
-    a.style.display = 'block';
-    a.style.top = "200px";
+const closeMenu = function() {
+    menu.classList.remove('show');
 }
-function hideA() {
-    b.style.display = "none";
-    a.style.display = "none";
+
+menuBtn.addEventListener('click', showMenu);
+closeMenuBtn.addEventListener('click', closeMenu);
+
+//scrolltop
+{
+    const scrollLinks = document.querySelectorAll('a.scroll-link');
+
+    for (let i = 0; i < scrollLinks.length; i++) {
+        scrollLinks[i].addEventListener('click', function(event) {
+            event.preventDefault();
+            const id = scrollLinks[i].getAttribute('href');
+            document.querySelector(id).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });        
+    }
 }

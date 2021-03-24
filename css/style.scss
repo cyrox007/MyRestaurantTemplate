@@ -23,20 +23,24 @@ $brp-lg: 1200px;
     padding: 0;
     margin: 0;
 }
-header {
-    border: 1px solid yellow;
+body {
+    overflow-x: hidden;
 }
 header {
+    position: sticky;
     padding: 1.5rem 0;
     .wrap-h {
         margin: 0 auto;
-        border: 1px solid yellow;
+        //border: 1px solid #888;
         display: grid;
         grid-template-columns: 1fr 3fr 1fr;
         max-width: 1200px;
         .main-btn {
             text-align: center;
             p {
+                margin: 0.5rem 0;
+                padding: 0.2rem 0;
+                border-radius: 3px;
                 width: 100%;
                 transition: .3s;
                 text-transform: uppercase;
@@ -51,6 +55,9 @@ header {
             }
         }
         .brand {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             h1 {
                 text-align: center;
                 font-family: $font-h;
@@ -61,14 +68,56 @@ header {
             padding-right: 1rem;
             display: flex;
             justify-content: space-between;
+            align-items: center;
             p a {
                 text-decoration: none;
                 color: $color-d;
                 font-size: $font-sp;
             }
+            .nav-btn {
+                cursor: pointer;
+                .fa-bars {
+                    font-size: 2.3rem;
+                    color: $color-d;
+                }
+            }
         }
-        .fa-bars {
-            font-size: 2.3rem;
+    }
+}
+nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 1rem 3rem;
+    background-color: rgba($color: $color-d, $alpha: 0.85);
+    transform: translateX(100%);
+    opacity: 0;
+    height: 100%;
+    transition: all 0.5s;
+    &.show {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+    .btn-close {
+        cursor: pointer;
+        .fa-times {
+            padding-left: 1rem;
+            font-size: 1.5rem;
+            color: $color-l;
+        }
+    }
+    ul {
+        list-style: none;
+        padding: 1rem 3rem;
+        li {
+            margin: 1rem 0;
+            a {
+                cursor: pointer;
+                text-decoration: none;
+                color: $color-l;
+            }
         }
     }
 }
