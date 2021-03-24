@@ -8,8 +8,8 @@ body {
 }
 
 header {
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
+  z-index: 6;
   padding: 1.5rem 0;
 }
 
@@ -38,7 +38,7 @@ header .wrap-h .main-btn p {
 
 header .wrap-h .main-btn p a {
   text-decoration: none;
-  color: #000;
+  color: #fff;
   font-size: 14px;
 }
 
@@ -58,7 +58,12 @@ header .wrap-h .brand {
           align-items: center;
 }
 
-header .wrap-h .brand h1 {
+header .wrap-h .brand a {
+  text-decoration: none;
+  color: #fff;
+}
+
+header .wrap-h .brand a h1 {
   text-align: center;
   font-family: Arial, sans-serif;
   font-size: 32px;
@@ -79,7 +84,7 @@ header .wrap-h .contact {
 
 header .wrap-h .contact p a {
   text-decoration: none;
-  color: #000;
+  color: #fff;
   font-size: 14px;
 }
 
@@ -89,7 +94,7 @@ header .wrap-h .contact .nav-btn {
 
 header .wrap-h .contact .nav-btn .fa-bars {
   font-size: 2.3rem;
-  color: #000;
+  color: #fff;
 }
 
 nav {
@@ -109,8 +114,9 @@ nav {
           transform: translateX(100%);
   opacity: 0;
   height: 100%;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  z-index: 7;
 }
 
 nav.show {
@@ -142,5 +148,24 @@ nav ul li a {
   cursor: pointer;
   text-decoration: none;
   color: #fff;
+}
+
+main {
+  position: relative;
+  height: 100vh;
+  background: url(https://media.architecturaldigest.com/photos/5c06ee552226412d33ca781c/16:9/w_2560%2Cc_limit/Joseph%252520Dirand%252520DSC_6808_GIRAFE_CREDIT%252520ADRIEN%252520DIRAND.jpg);
+  background-size: cover;
+}
+
+main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0)), to(#000000));
+  background: linear-gradient(to top, rgba(0, 0, 0, 0), #000000);
+  z-index: 5;
 }
 /*# sourceMappingURL=style.css.map */

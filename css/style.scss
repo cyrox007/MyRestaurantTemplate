@@ -27,7 +27,8 @@ body {
     overflow-x: hidden;
 }
 header {
-    position: sticky;
+    position: fixed;
+    z-index: 6;
     padding: 1.5rem 0;
     .wrap-h {
         margin: 0 auto;
@@ -46,7 +47,7 @@ header {
                 text-transform: uppercase;
                 a {
                     text-decoration: none;
-                    color: $color-d;
+                    color: $color-l;
                     font-size: $font-sp;   
                 }
                 &:hover {
@@ -58,10 +59,14 @@ header {
             display: flex;
             justify-content: center;
             align-items: center;
-            h1 {
-                text-align: center;
-                font-family: $font-h;
-                font-size: $font-sh;
+            a {
+                text-decoration: none;
+                color: $color-l;
+                h1 {
+                    text-align: center;
+                    font-family: $font-h;
+                    font-size: $font-sh;
+                }
             }
         }
         .contact {
@@ -71,14 +76,14 @@ header {
             align-items: center;
             p a {
                 text-decoration: none;
-                color: $color-d;
+                color: $color-l;
                 font-size: $font-sp;
             }
             .nav-btn {
                 cursor: pointer;
                 .fa-bars {
                     font-size: 2.3rem;
-                    color: $color-d;
+                    color: $color-l;
                 }
             }
         }
@@ -95,7 +100,8 @@ nav {
     transform: translateX(100%);
     opacity: 0;
     height: 100%;
-    transition: all 0.5s;
+    transition: all 0.3s;
+    z-index: 7;
     &.show {
         transform: translateX(0%);
         opacity: 1;
@@ -119,5 +125,20 @@ nav {
                 color: $color-l;
             }
         }
+    }
+}
+main {
+    position: relative;
+    height: 100vh;
+    background: url(https://media.architecturaldigest.com/photos/5c06ee552226412d33ca781c/16:9/w_2560%2Cc_limit/Joseph%252520Dirand%252520DSC_6808_GIRAFE_CREDIT%252520ADRIEN%252520DIRAND.jpg);
+    background-size: cover;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0;
+        bottom: 0; right: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0), #000000);
+        z-index: 5;
     }
 }
