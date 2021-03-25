@@ -1,3 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Pattaya&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+::-webkit-scrollbar-button {
+  background-image: url("");
+  background-repeat: no-repeat;
+  width: 8px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ebebeb;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: #505050;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #1d1d1d;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+::-webkit-resizer {
+  background-image: url("");
+  background-repeat: no-repeat;
+  width: 4px;
+  height: 0px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -5,10 +41,13 @@
 
 body {
   overflow-x: hidden;
+  background-color: #ccc;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
 }
 
 header {
-  position: fixed;
+  position: relative;
   z-index: 6;
   padding: 1.5rem 0;
   margin: 0 auto;
@@ -29,6 +68,8 @@ header .wrap-h .main-btn {
 }
 
 header .wrap-h .main-btn p {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
   margin: 0.5rem 0;
   padding: 0.2rem 0;
   border-radius: 3px;
@@ -67,7 +108,7 @@ header .wrap-h .brand a {
 
 header .wrap-h .brand a h1 {
   text-align: center;
-  font-family: Arial, sans-serif;
+  font-family: "Pattaya", sans-serif;
   font-size: 32px;
 }
 
@@ -85,6 +126,8 @@ header .wrap-h .contact {
 }
 
 header .wrap-h .contact p a {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 100;
   text-decoration: none;
   color: #fff;
   font-size: 14px;
@@ -154,7 +197,7 @@ nav ul li a {
 
 main {
   position: relative;
-  height: 100vh;
+  height: 80vh;
   background: url(https://media.architecturaldigest.com/photos/5c06ee552226412d33ca781c/16:9/w_2560%2Cc_limit/Joseph%252520Dirand%252520DSC_6808_GIRAFE_CREDIT%252520ADRIEN%252520DIRAND.jpg);
   background-size: cover;
 }
@@ -169,5 +212,298 @@ main::before {
   background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0)), to(#000000));
   background: linear-gradient(to top, rgba(0, 0, 0, 0), #000000);
   z-index: 5;
+}
+
+.overlay {
+  display: none;
+  opacity: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.overlay.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 1;
+}
+
+.modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #c9c9c9;
+  min-width: 600px;
+  max-height: 400px;
+  padding: 30px;
+  position: relative;
+  -webkit-box-shadow: 0 0 25px #000;
+          box-shadow: 0 0 25px #000;
+  border-radius: 5px;
+}
+
+.modal .modalclose .fa-times {
+  padding: 1rem;
+  font-size: 22px;
+}
+
+.modal .mod-content {
+  padding: 1rem;
+  max-width: 800px;
+}
+
+.modal .mod-content hr {
+  margin: 1rem 0;
+}
+
+.offers {
+  width: 100%;
+  position: relative;
+  padding: 1.5rem 0;
+}
+
+.offers .wrap-ofr {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.offers .wrap-ofr a {
+  text-decoration: none;
+}
+
+.offers .wrap-ofr a .card-ofr {
+  width: 350px;
+  height: 270px;
+  position: relative;
+  border: 1px double #000;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.offers .wrap-ofr a .card-ofr:hover > img {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.offers .wrap-ofr a .card-ofr img {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-size: cover;
+}
+
+.offers .wrap-ofr a .card-ofr h3 {
+  font-family: "Pattaya", sans-serif;
+  font-weight: 200;
+  color: #fff;
+  z-index: 7;
+  font-size: 32px;
+  text-transform: uppercase;
+}
+
+.offers .wrap-ofr a .card-ofr::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+.Reviews {
+  width: 100%;
+  height: auto;
+  position: relative;
+  padding: 1.5rem 0;
+}
+
+.Reviews .wrap-rew {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.Reviews .wrap-rew .rew-card {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 28rem;
+}
+
+.Reviews .wrap-rew .rew-card .rew-card-body {
+  position: relative;
+  padding: 1rem;
+  border-radius: 30px;
+  background: #021c1e;
+  background: -webkit-gradient(linear, right top, left top, from(#021c1e), color-stop(35%, #004445), color-stop(65%, #2c7873), to(#6fb98f));
+  background: linear-gradient(to left, #021c1e 0%, #004445 35%, #2c7873 65%, #6fb98f 100%);
+  z-index: 2;
+}
+
+.Reviews .wrap-rew .rew-card .rew-card-body p {
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  line-height: 1.5rem;
+  font-weight: 400;
+}
+
+.News {
+  width: 100%;
+  height: auto;
+  position: relative;
+  padding: 1.5rem 0;
+}
+
+.News .wrap-news {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.News .wrap-news h2 {
+  font-family: "Pattaya", sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  color: #000;
+}
+
+.News .wrap-news .news-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 1rem;
+}
+
+.News .wrap-news .news-block .news-card {
+  max-width: 18rem;
+  -webkit-box-shadow: 0 0 15px #000;
+          box-shadow: 0 0 15px #000;
+  border-radius: 3px;
+  overflow: hidden;
+  background-color: #ccc;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  margin: 0 5px;
+}
+
+.News .wrap-news .news-block .news-card a {
+  text-decoration: none;
+  color: #000;
+}
+
+.News .wrap-news .news-block .news-card a .img-n {
+  overflow: hidden;
+}
+
+.News .wrap-news .news-block .news-card a .img-n img {
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.News .wrap-news .news-block .news-card a:hover > .img-n img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.News .wrap-news .news-block .news-card a .news-card-body {
+  padding: 1rem;
+}
+
+.News .wrap-news .news-block .news-card a .news-card-body h3 {
+  font-family: "Pattaya", sans-serif;
+  line-height: 1.8rem;
+  font-size: 32px;
+  padding-bottom: 0.5rem;
+}
+
+.News .wrap-news .news-block .news-card a .news-card-body p {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.5rem;
+  font-size: 14px;
+}
+
+.News .wrap-news .news-block .news-card:hover {
+  background-color: #fff;
+}
+
+footer {
+  background-color: #000;
+  color: #fff;
+  position: relative;
 }
 /*# sourceMappingURL=style.css.map */

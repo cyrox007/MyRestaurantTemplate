@@ -14,6 +14,22 @@ const closeMenu = function() {
 menuBtn.addEventListener('click', showMenu);
 closeMenuBtn.addEventListener('click', closeMenu);
 
+// Modal window
+const modalButton = document.querySelector('.btn');
+const modalWind = document.querySelector('#modal-wind');
+const modalClose = document.querySelector('.modalclose');
+
+const showModal = function () {
+    modalWind.classList.add('show');
+}
+
+const closeModal = function () {
+    modalWind.classList.remove('show');
+}
+
+modalButton.addEventListener('click', showModal);
+modalClose.addEventListener('click', closeModal);
+
 //scrolltop
 {
     const scrollLinks = document.querySelectorAll('a.scroll-link');

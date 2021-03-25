@@ -1,11 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Pattaya&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 $color-l: #fff;
 $color-s: #ccc;
 $color-m: #999;
 $color-n: #444;
 $color-d: #000;
 
-$font-h: Arial, sans-serif;
-$font-p: 'Times New Roman';
+$font-h: 'Pattaya', sans-serif;
+$font-p: 'Open Sans', sans-serif;
 
 $font-sh: 32px;
 $font-sp: 14px;
@@ -18,6 +19,33 @@ $brp-sm: 480px;
 $brp-md: 768px;
 $brp-lg: 1200px;
 
+::-webkit-scrollbar-button {
+    background-image: url("");
+    background-repeat: no-repeat;
+    width: 8px;
+    height: 0px;
+}
+::-webkit-scrollbar-track {
+    background-color: #ebebeb;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background-color: #505050;
+    transition: 0.3s;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #1d1d1d;
+    transition: all 0.3s;
+}
+::-webkit-resizer {
+    background-image: url("");
+    background-repeat: no-repeat;
+    width: 4px;
+    height: 0px;
+}
+::-webkit-scrollbar {
+    width: 5px;
+}
 
 * {
     padding: 0;
@@ -25,9 +53,11 @@ $brp-lg: 1200px;
 }
 body {
     overflow-x: hidden;
+    background-color: $color-s;
+    perspective: 1000px;
 }
 header {
-    position: fixed;
+    position: relative;
     z-index: 6;
     padding: 1.5rem 0;
     margin: 0 auto;
@@ -41,6 +71,8 @@ header {
         .main-btn {
             text-align: center;
             p {
+                font-family: $font-p;
+                font-weight: 500;
                 margin: 0.5rem 0;
                 padding: 0.2rem 0;
                 border-radius: 3px;
@@ -77,6 +109,8 @@ header {
             justify-content: space-between;
             align-items: center;
             p a {
+                font-family: $font-p;
+                font-weight: 100;
                 text-decoration: none;
                 color: $color-l;
                 font-size: $font-sp;
@@ -131,7 +165,7 @@ nav {
 }
 main {
     position: relative;
-    height: 100vh;
+    height: 80vh;
     background: url(https://media.architecturaldigest.com/photos/5c06ee552226412d33ca781c/16:9/w_2560%2Cc_limit/Joseph%252520Dirand%252520DSC_6808_GIRAFE_CREDIT%252520ADRIEN%252520DIRAND.jpg);
     background-size: cover;
 
@@ -143,4 +177,230 @@ main {
         background: linear-gradient(to top, rgba(0, 0, 0, 0), #000000);
         z-index: 5;
     }
+}
+.overlay {
+    display: none;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background-color: rgba(0,0,0,0.3);
+    transition: all 0.3s;
+    &.show {
+        display: flex;
+        opacity: 1;
+    }
+}
+.modal {
+    display: flex;
+    background-color: #c9c9c9;
+    min-width: 600px;
+    max-height: 400px;
+    padding: 30px;
+    //overflow-y: scroll;
+    position: relative;
+    box-shadow: 0 0 25px #000;
+    border-radius: 5px;
+    .modalclose {
+        .fa-times {
+            padding: 1rem;
+            font-size: 22px;
+        }
+    }
+    .mod-content {
+        padding: 1rem;
+        max-width: 800px;
+        hr {
+            margin: 1rem 0;
+        }
+    }
+}
+.offers {
+    width: 100%;
+    position: relative;
+    padding: 1.5rem 0;
+
+    .wrap-ofr {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        a {
+            text-decoration: none;
+            .card-ofr {
+                width: 350px;
+                height: 270px;
+                position: relative;
+                border: 1px double #000;
+                background-size: cover;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                transition: all 0.3s;
+                &:hover > img {
+                    
+                    transform: scale(1.2);
+                }
+                img {
+                    transition: all 0.3s;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 0;
+                    background-size: cover;
+                }
+                h3 {
+                    font-family: $font-h;
+                    font-weight: 200;
+                    color: $color-l;
+                    z-index: 7;
+                    font-size: $font-sh;
+                    text-transform: uppercase;
+                }
+                &::before {
+                    position: absolute;
+                    content: '';
+                    top: 0; right: 0;
+                    bottom: 0; left: 0;
+                    background-color: rgba($color: $color-d, $alpha: 0.55);
+                    z-index: 1;
+                }
+            }
+        }
+    }
+}
+.Reviews {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 1.5rem 0;
+    .wrap-rew {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        .rew-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            max-width: 28rem;
+
+            .rew-card-body {
+                position: relative;
+                padding: 1rem;
+                border-radius: 30px;
+                background: rgb(2,28,30);
+                background: linear-gradient(to left, rgba(2,28,30,1) 0%, rgba(0,68,69,1) 35%, rgba(44,120,115,1) 65%, rgba(111,185,143,1) 100%);
+                z-index: 2;
+                // &::before {
+                //     content: '';
+                //     height: 15px;
+                //     width: 15px;
+                //     background: rgb(2,28,30);
+                //     position: absolute;
+                //     bottom: 0;
+                //     margin: 0 auto;
+                //     transform: translateY(50%) rotate(45deg);
+                //     background: linear-gradient(-135deg, rgba(2,28,30,1) 0%, rgba(0,68,69,1) 35%, rgba(44,120,115,1) 65%, rgba(111,185,143,1) 100%);
+                //     z-index: -1;
+                // }
+                p {
+                    color: $color-l;
+                    font-family: $font-p;
+                    font-size: $font-sp;
+                    line-height: 1.5rem;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}
+.News {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 1.5rem 0;
+    .wrap-news {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        h2 {
+            font-family: $font-h;
+            font-weight: 500;
+            font-size: $font-sh;
+            color: $color-d;
+        }
+        .news-block {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            padding: 1rem;
+            .news-card {
+                max-width: 18rem;
+                box-shadow: 0 0 15px #000;
+                border-radius: 3px;
+                overflow: hidden;
+                background-color: $color-s;
+                transition: all 0.3s;
+                margin: 0 5px;
+                a {
+                    text-decoration: none;
+                    color: $color-d;
+                    .img-n {
+                        overflow: hidden;
+                        img {
+                            width: 100%;
+                            height: auto;
+                            border-radius: 3px;
+                            transition: all 0.3s;
+                        }
+                    }
+                    &:hover > .img-n img {
+                        transform: scale(1.1);
+                    }
+                    .news-card-body {
+                        padding: 1rem;
+                        h3 {
+                            font-family: $font-h;
+                            line-height: 1.8rem;
+                            font-size: $font-sh;
+                            padding-bottom: 0.5rem;
+                        }
+                        p {
+                            font-family: $font-p;
+                            line-height: 1.5rem;
+                            font-size: $font-sp;
+                        }
+                    }
+                }
+                &:hover  {
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+}
+footer {
+    background-color: #000;
+    color: $color-l;
+    position: relative;
+    // .wrap-f {
+
+    // }
 }
