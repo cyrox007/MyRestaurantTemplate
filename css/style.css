@@ -82,7 +82,7 @@ header .wrap-h .main-btn p {
 header .wrap-h .main-btn p a {
   text-decoration: none;
   color: #fff;
-  font-size: 14px;
+  font-size: calc( 0.00268 * 100vw + 11.14286px);
 }
 
 header .wrap-h .main-btn p:hover {
@@ -109,7 +109,7 @@ header .wrap-h .brand a {
 header .wrap-h .brand a h1 {
   text-align: center;
   font-family: "Pattaya", sans-serif;
-  font-size: 32px;
+  font-size: calc( 0.0125 * 100vw + 14px);
 }
 
 header .wrap-h .contact {
@@ -130,7 +130,7 @@ header .wrap-h .contact p a {
   font-weight: 100;
   text-decoration: none;
   color: #fff;
-  font-size: 14px;
+  font-size: calc( 0.00268 * 100vw + 11.14286px);
 }
 
 header .wrap-h .contact .nav-btn {
@@ -158,7 +158,7 @@ nav {
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
   opacity: 0;
-  height: 100%;
+  height: 90%;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   z-index: 7;
@@ -282,6 +282,10 @@ main::before {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -338,7 +342,7 @@ main::before {
   font-weight: 200;
   color: #fff;
   z-index: 7;
-  font-size: 32px;
+  font-size: calc( 0.0125 * 100vw + 14px);
   text-transform: uppercase;
 }
 
@@ -396,7 +400,7 @@ main::before {
 .Reviews .wrap-rew .rew-card .rew-card-body p {
   color: #fff;
   font-family: "Open Sans", sans-serif;
-  font-size: 14px;
+  font-size: calc( 0.00268 * 100vw + 11.14286px);
   line-height: 1.5rem;
   font-weight: 400;
 }
@@ -426,7 +430,7 @@ main::before {
 .News .wrap-news h2 {
   font-family: "Pattaya", sans-serif;
   font-weight: 500;
-  font-size: 32px;
+  font-size: calc( 0.0125 * 100vw + 14px);
   color: #000;
 }
 
@@ -438,18 +442,19 @@ main::before {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   padding: 1rem;
 }
 
 .News .wrap-news .news-block .news-card {
-  max-width: 18rem;
+  max-width: 20rem;
   -webkit-box-shadow: 0 0 15px #000;
           box-shadow: 0 0 15px #000;
+  margin: 1rem 0.5rem !important;
   border-radius: 3px;
   overflow: hidden;
   background-color: #ccc;
@@ -487,14 +492,14 @@ main::before {
 .News .wrap-news .news-block .news-card a .news-card-body h3 {
   font-family: "Pattaya", sans-serif;
   line-height: 1.8rem;
-  font-size: 32px;
+  font-size: calc( 0.0125 * 100vw + 14px);
   padding-bottom: 0.5rem;
 }
 
 .News .wrap-news .news-block .news-card a .news-card-body p {
   font-family: "Open Sans", sans-serif;
   line-height: 1.5rem;
-  font-size: 14px;
+  font-size: calc( 0.00268 * 100vw + 11.14286px);
 }
 
 .News .wrap-news .news-block .news-card:hover {
@@ -502,8 +507,17 @@ main::before {
 }
 
 footer {
-  background-color: #000;
+  background-color: #444;
   color: #fff;
   position: relative;
+  width: 100%;
+  padding: 1.5rem 0;
+}
+
+footer .wrap-f {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */
