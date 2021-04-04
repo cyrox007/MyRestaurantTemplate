@@ -127,12 +127,12 @@ header {
 
 .main-btn p a {
   text-decoration: none;
-  color: #fff;
+  color: #FAF9F5;
   font-size: calc( 0.00268 * 100vw + 11.14286px);
 }
 
 .main-btn p:hover {
-  background-color: #999;
+  background-color: #D1B6AF;
 }
 
 .brand {
@@ -149,7 +149,7 @@ header {
 
 .brand a {
   text-decoration: none;
-  color: #fff;
+  color: #FAF9F5;
 }
 
 .brand a h1 {
@@ -175,7 +175,7 @@ header {
   font-family: "Open Sans", sans-serif;
   font-weight: 100;
   text-decoration: none;
-  color: #fff;
+  color: #FAF9F5;
   font-size: calc( 0.00268 * 100vw + 11.14286px);
   margin-right: 1rem;
 }
@@ -186,7 +186,7 @@ header {
 
 .contact .nav-btn .fa-bars {
   font-size: 2.3rem;
-  color: #fff;
+  color: #FAF9F5;
 }
 
 nav {
@@ -201,7 +201,7 @@ nav {
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
   padding: 1rem 3rem;
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(133, 120, 112, 0.85);
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
   opacity: 0;
@@ -224,7 +224,7 @@ nav .btn-close {
 nav .btn-close .fa-times {
   padding-left: 1rem;
   font-size: 1.5rem;
-  color: #fff;
+  color: #FAF9F5;
 }
 
 nav ul {
@@ -239,7 +239,7 @@ nav ul li {
 nav ul li a {
   cursor: pointer;
   text-decoration: none;
-  color: #fff;
+  color: #FAF9F5;
 }
 
 main {
@@ -372,7 +372,7 @@ main::before {
 .offers .card-ofr a h3 {
   font-family: "Pattaya", sans-serif;
   font-weight: 200;
-  color: #fff;
+  color: #FAF9F5;
   z-index: 5 !important;
   font-size: calc( 0.0125 * 100vw + 14px);
   text-transform: uppercase;
@@ -407,8 +407,32 @@ main::before {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.55);
+  background-color: rgba(17, 17, 17, 0.55);
   z-index: -1;
+}
+
+.btn-class {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.btn-class .btn {
+  padding: 18px 55px;
+  font-size: 20px;
+  font-weight: 600;
+  background: whitesmoke;
+  color: #363636;
+  border: 2px solid #363636;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn-class .btn:hover {
+  color: #A69287;
+  border: 2px solid #857870;
+  -webkit-box-shadow: 0 0 2px #000;
+          box-shadow: 0 0 2px #000;
+  background: #FAF9F5;
 }
 
 .Reviews {
@@ -433,7 +457,7 @@ main::before {
   position: relative;
   padding: 1rem;
   border-radius: 3px;
-  background: #ccc;
+  background: #D1B6AF;
   z-index: 2;
 }
 
@@ -481,7 +505,7 @@ main::before {
   margin: 1rem 0.5rem !important;
   border-radius: 3px;
   overflow: hidden;
-  background-color: #ccc;
+  background-color: #D1B6AF;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
@@ -525,6 +549,11 @@ main::before {
   padding-bottom: 0.5rem;
 }
 
+.News .news-block .news-card a .news-card-body hr {
+  color: #d3baad;
+  margin: 15px 0;
+}
+
 .News .news-block .news-card a .news-card-body p {
   font-family: "Open Sans", sans-serif;
   line-height: 1.5rem;
@@ -536,17 +565,34 @@ main::before {
 }
 
 footer {
-  background-color: #444;
-  color: #fff;
+  background-color: #857870;
+  color: #FAF9F5;
   position: relative;
   width: 100%;
   padding: 1.5rem 0;
 }
 
-footer .wrap-f {
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
+footer .social-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer .social-icon .icon {
+  font-size: calc( 0.0125 * 100vw + 14px);
+  margin: 1rem;
+}
+
+footer p {
+  font-size: 18px;
   text-align: center;
+}
+
+footer p a {
+  color: #FAF9F5;
+  text-transform: unset;
 }
 /*# sourceMappingURL=style.css.map */
