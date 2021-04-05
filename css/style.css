@@ -156,6 +156,7 @@ header {
   text-align: center;
   font-family: "Pattaya", sans-serif;
   font-size: calc( 0.0125 * 100vw + 14px);
+  font-display: inherit;
 }
 
 .contact {

@@ -19,6 +19,7 @@ $font-p: 'Open Sans', sans-serif;
 $font-sh: calcFluidFontSize(18, 32, 320, 1440, px);
 $font-sp: calcFluidFontSize(12, 15, 320, 1440, px);
 
+
 $py-n: 2rem 0;
 $px-n: 0 1.5rem;
 
@@ -130,6 +131,7 @@ header {
             text-align: center;
             font-family: $font-h;
             font-size: $font-sh;
+            font-display: inherit;
         }
     }
 }
